@@ -6,24 +6,26 @@ package car.entity
 
 class Car(id: Int) {
 
-  private[this] val totalnum = util.Random.nextInt(100)
+  private[this] val totalnum = util.Random.nextInt(1000)
   private[this] var msgnum = totalnum
-  private[this] var mtype: Int = 2
+  private[this] var mtype: Int = 1
+  private[this] var hasnext = true
 
   def nextMsg: Option[Msg] = {
-    if (totalnum == msgnum) mtype = 1
-    if (msgnum == 0) mtype = 3
+    if (msgnum != totalnum) {
+      mtype = 2
+    }
     msgnum = msgnum - 1
-    if (msgnum < 0)
-      None
-    else
-      Some(Msg(id, mtype, System.currentTimeMillis(), util.Random.nextInt(100)))
+    if (msgnum <= 0) {
+      mtype = 3
+      hasnext = false
+      Some(Msg(id, totalnum - msgnum, mtype, System.currentTimeMillis(), util.Random.nextInt(100)))
+    } else {
+      Some(Msg(id, totalnum - msgnum, mtype, System.currentTimeMillis(), util.Random.nextInt(100)))
+    }
   }
 
-  def hasMsg: Boolean ={
-    if(msgnum < 0) false
-    else true
-  }
+  def hasMsg: Boolean = hasnext
 
 }
 

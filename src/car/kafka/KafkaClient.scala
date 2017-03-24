@@ -12,7 +12,21 @@ class KafkaClient(broker: String, topic: String) extends Actor{
   props.put("serializer.class", "kafka.serializer.StringEncoder")
   props.put("producer.type", "async")
   val producer = new Producer[String, String](new ProducerConfig(props))
-  /*private[kafka] def send(any: Any) {
+
+  private[this] def send(msg: Some[Msg]) {
+    val data = new KeyedMessage[String, String](topic, msg.get.toString)
+    producer.send(data)
+  }
+
+  override def receive: Receive = {
+    case msg:Some[Msg] => send(msg)
+    case _ =>
+  }
+}
+
+
+
+/*private[kafka] def send(any: Any) {
     val producer = new Producer[String, String](new ProducerConfig(props))
     any match {
       case msg: String => sendFun(msg, producer)
@@ -22,14 +36,3 @@ class KafkaClient(broker: String, topic: String) extends Actor{
     }
     producer.close
   }*/
-
-  private[this] def send(msg: Some[Msg]) {
-    val data = new KeyedMessage[String, String](topic, msg.toString)
-    producer.send(data)
-  }
-
-  override def receive: Receive = {
-    case msg:Some[Msg] => send(msg)
-    case _ =>
-  }
-}
