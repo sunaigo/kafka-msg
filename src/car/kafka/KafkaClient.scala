@@ -23,13 +23,13 @@ class KafkaClient(broker: String, topic: String) extends Actor{
     producer.close
   }*/
 
-  private[this] def send(msg: String) {
-    val data = new KeyedMessage[String, String](topic, msg)
+  private[this] def send(msg: Some[Msg]) {
+    val data = new KeyedMessage[String, String](topic, msg.toString)
     producer.send(data)
   }
 
   override def receive: Receive = {
-    case msg:Some[Msg] => send(msg.getOrElse[String]("").toString)
+    case msg:Some[Msg] => send(msg)
     case _ =>
   }
 }
