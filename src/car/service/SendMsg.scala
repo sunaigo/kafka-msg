@@ -3,8 +3,8 @@ package car.service
 import java.util
 
 import akka.actor.{ActorSystem, Props}
-import car.common.kafka.KafkaClient
 import car.entity.Car
+import car.kafka.KafkaClient
 
 /**
   * Created by sunyulong on 2017/3/24.

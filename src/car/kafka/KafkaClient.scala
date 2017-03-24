@@ -1,4 +1,4 @@
-package car.common.kafka
+package car.kafka
 
 import java.util.Properties
 import akka.actor.Actor
