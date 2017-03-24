@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jedis">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Documents/lib/jedis" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Documents/lib/jedis" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Documents/lib/jedis" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Documents/lib/jedis" recursive="false" type="SOURCES" />
+  </library>
+</component>

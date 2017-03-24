@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="cmf5.9">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Documents/lib/cmf5.9.0" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Documents/lib/cmf5.9.0" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Documents/lib/cmf5.9.0" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Documents/lib/cmf5.9.0" recursive="false" type="SOURCES" />
+  </library>
+</component>
