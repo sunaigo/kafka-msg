@@ -6,7 +6,7 @@ package car.entity
 
 class Car(id: Int) {
 
-  private[this] val totalnum = util.Random.nextInt(1000)
+  private[this] val totalnum = util.Random.nextInt(100)
   private[this] var msgnum = totalnum
   private[this] var mtype: Int = 1
   private[this] var hasnext = true

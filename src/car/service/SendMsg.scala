@@ -11,7 +11,7 @@ import car.kafka.KafkaClient
   */
 object SendMsg extends App {
 
-  val carNum = 10
+  val carNum = 100
   val interval = 500
   val carList = new util.Hashtable[Int, Car]()
   for (id <- 1 to carNum) {
